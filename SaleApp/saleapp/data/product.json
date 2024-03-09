@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "name": "Iphone 13 Promax",
+    "price": 13000000000,
+    "image": "https://cdn11.dienmaycholon.vn/filewebdmclnew/DMCL21/Picture//Apro/Apro_product_27028/iphone-13-pro-m_main_193_1020.png.webp",
+    "category_id": 1
+  },
+  {
+    "id": 2,
+    "name": "Samsung Galaxy S8",
+    "price": 23000000000,
+    "image": "https://cdn.tgdd.vn/Products/Images/42/78479/samsung-galaxy-s8-4-300x300.jpg",
+    "category_id": 1
+  },
+  {
+    "id": 3,
+    "name": "Nokia",
+    "category_id": 1,
+    "price": 150000000,
+    "image": "https://cdn.tgdd.vn/Products/Images/42/228366/nokia-215-xanh-ngoc-new-600x600-200x200.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Switch",
+    "category_id": 2,
+    "price": 8000000000,
+    "image": "https://hanoicomputercdn.com/media/product/67802_may_choi_game_nintendo_switch_oled_pokemon_scarlet_and_violet_edition_0002_3.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Mac",
+    "category_id": 3,
+    "price": 8000000000,
+    "image": "https://cdn.tgdd.vn/Products/Images/44/231244/macbook-air-m1-2020-gray-600x600.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Asus",
+    "category_id": 3,
+    "price": 1230000000,
+    "image": "https://dlcdnwebimgs.asus.com/gain/4cc342ab-c4fa-42a9-8619-a340f6119bec/"
+  },
+  {
+    "id": 7,
+    "category_id": 2,
+    "name": "Ipad",
+    "price": 83000000,
+    "image": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/ipad-10th-gen-finish-select-202212-blue-wifi_FMT_WHH?wid=1280&hei=720&fmt=p-jpg&qlt=95&.v=1670856032314"
+  },
+  {
+    "id": 8,
+    "category_id": 3,
+    "name": "Thinkpad",
+    "price": 83000000,
+    "image": "https://laptops.vn/uploads/lenovo_thinkpad_t14_gen_3_1695368032_640.png"
+  }
+]
