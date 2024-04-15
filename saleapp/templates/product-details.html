@@ -1,18 +1,21 @@
 {% extends 'layout/base.html' %}
 
-{% block title %}Chi tiết sản phẩm{% endblock %}
+{% block title %} Chi tiết sản phẩm {% endblock%}
 
-{% block content %}
+{% block content%}
 
 
 <div class="row">
+    <!--left-->
     <div class="col-md-5 col-12">
-        <img src="{{product.image}}" class="img-fluid rounded" />
+        <!-- The . img-fluid class makes an image responsive by automatically applying max-width: 100%; and height: auto; to it. -->
+        <img src="{{product.image}}" class="img-fluid rounded"/>
     </div>
+    <!--right-->
     <div class="col-md-7 col-12">
-        <h1 class="text-info">{{ product.name }}</h1>
-        <h3 class="text-danger">{{ product.price }} VNĐ</h3>
+        <h1 class="text-info">{{product.name}}</h1>
+        <h3 class="text-danger">{{product.price}} VNĐ</h3>
     </div>
 </div>
 
-{% endblock %}
+{% endblock%}

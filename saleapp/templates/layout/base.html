@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{% block title %}{% endblock %}</title>
+    <title>{% block title %} {% endblock %}</title>
+    <!--Viewport, de co the kiem tra giao dien khi dung dt-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- copy css và bundle tu bootstrap5 cdn -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -11,14 +13,18 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
+<!-- kiem 1 navbar co responsive  cho dt co the dung dc -->
 
+<!--import header foooter, cho phep con thay doi-->
 {% block header %}
 {% include 'layout/header.html' %}
 {% endblock %}
-
+<!--buoi dau tach session, buoi sau tinh sau-->
+<!--section class=container de cac compnent con ko cham man hinh-->
+<!--vung noi dung, bat buoc con phai ghi de -> gan them co required-->
 
 <div class="container">
-{% block content required %}{% endblock %}
+    {% block content required %} {% endblock %}
 </div>
 
 
@@ -26,5 +32,6 @@
 {% include 'layout/footer.html' %}
 {% endblock %}
 
+<script src="{{ url_for('static', filename='/js/cart.js') }}"> </script>
 </body>
 </html>

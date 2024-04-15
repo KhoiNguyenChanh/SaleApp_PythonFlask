@@ -1,0 +1,33 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+<h1 class="text-info text-center">{{ _('CHÀO MỪNG ĐẾN VỚI TRANG QUẢN TRỊ') }}</h1>
+
+
+{% if current_user.is_authenticated %}
+<h2 class="text-success text-center mt-1">Chào mừng bạn <span>{{current_user.name}} quay lại</span></h2>
+{% else %}
+<form method="post" action="/admin-login">
+    <!--        1. validate bằng html có sẵn (required - validate html 5)-->
+    <!--    có thể có các pattern ép người dunùng nhập theo eeeu cầu-->
+    <!--    form-floating thanh form-group vi trong bootstrap4 chua co floating-->
+    <div class="form-group mb-3 mt-3">
+        <label for="username">Tên đăng nhập</label>
+        <input type="text" class="form-control" id="username" placeholder="Tên đăng nhập" name="username"
+               pattern="[a-zA-Z0-9]*" required>
+    </div>
+
+    <div class="form-group mt-3 mb-3">
+        <label for="password">Mật khẩu</label>
+        <input type="password" class="form-control" id="password" placeholder="Mật khẩu" name="password" required>
+    </div>
+
+    <div class="form-floating mt-3 mb-3">
+        <button class="btn btn-success" type="submit">Đăng nhập</button>
+    </div>
+</form>
+
+{% endif %}
+
+
+{% endblock %}

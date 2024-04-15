@@ -1,0 +1,8 @@
+<!--    <h1>WELCOME TO ECOMMERCE</h1>-->
+<!--    &lt;!&ndash; (l), lay bien name bang cach duoi, do ben kia tim va goi ben nay ne co su lien ket voi nhau &ndash;&gt;-->
+<!--    &lt;!&ndash; {{ }}: jinza template&ndash;&gt;-->
+<!--    <h2>WELCOME {{ name }}</h2>-->
+code cu
+vi dm trong html dat comment ngu la code loi :)))
+
+// tạo tập tin -> dao đọc tập tin data -> index đổ data ra, sau đó nạp bootstrap

@@ -1,28 +1,73 @@
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="/">E-commerce App</a>
+        <!-- href=" duong link vao trang can vao" -->
+        <a class="navbar-brand" href="/">E-Commerce App</a>
+
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
         </button>
+
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <!--me-auto chỉ dùng cho ul? ,me-auto no tu day phan duoi ul qua ben phai:1?-->
             <ul class="navbar-nav me-auto">
+
                 <li class="nav-item">
+                    <!-- trang chủ, bật cờ để nhận active lên, đặt trong class, thằng active sẽ có opacity cao hơn thằng inactive-->
                     <a class="nav-link active" href="/">Trang chủ</a>
                 </li>
+
+                <!-- Nạp categories của mình vào, (?) khi nào phát hiện có dữ liệu mới active?-->
+                <!-- cú pháp duyệt categories, duyệt biến c, c laays id và name thuộc data, có thể gọi nhiều jinja trên 1 dòng -->
                 {% for c in categories %}
                 <li class="nav-item">
+                    <!--href khi nhấn submit sẽ đưa lên link,-->
                     <a class="nav-link" href="/?category_id={{ c.id }}">{{ c.name }}</a>
                 </li>
                 {% endfor %}
-                 <li class="nav-item">
-                    <a class="nav-link text-info" href="/login">&#128110; Đăng nhập</a>
+
+                <!--                neu chua dang nhap thi hien cai link-->
+                <!--                kiem tra trang thai dang nhap:-->
+                {% if current_user.is_authenticated %}
+                <li class="nav-item">
+                    <!--href khi nhấn submit sẽ đưa lên link,-->
+                    <a class="nav-link text-info" href="/login">
+                        <img src="{{ current_user.avatar }}" width="40" class="rounded img-fluid"/>Chào
+                        {{current_user.username}}
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <!--href khi nhấn submit sẽ đưa lên link,-->
+                    <a class="nav-link text-info" href="/logout"> &#128110; Đăng xuất</a>
+                </li>
+
+                {% else %}
+                <li class="nav-item">
+                    <!--href khi nhấn submit sẽ đưa lên link,-->
+                    <a class="nav-link text-info" href="/login"> &#128110; Đăng nhập</a>
+                </li>
+                <li class="nav-item">
+                    <!--href khi nhấn submit sẽ đưa lên link,-->
+                    <a class="nav-link text-success" href="/register"> &#128110; Đăng ký</a>
+                </li>
+
+                {% endif %}
+                <li class="nav-item">
+
+                    <a class="nav-link" href="/cart"> &#128722; Giỏ hàng
+                        <!-- so luong trong gio hàng-->
+                        <span class="bagde bg-danger cart-counter">0</span>
+                    </a>
                 </li>
 
             </ul>
+            <!--Mỗi khi bấm nút "Tìm", keyword sẽ được hiện trên đường link-->
+            <!--cái keyword đấy là trường "name" trong input, chuyển type của button thành submit-->
+            <!--cái nơi submit lên goi là "action" trong form, đưa lên trang "/", method đặt là get-->
             <form class="d-flex" method="get" action="/">
                 <input class="form-control me-2" name="q" type="text" placeholder="Nhập từ khóa...">
                 <button class="btn btn-primary" type="submit">Tìm</button>
             </form>
+
         </div>
     </div>
 </nav>
